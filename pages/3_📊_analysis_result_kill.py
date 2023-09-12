@@ -16,8 +16,8 @@ def data_result1():
 
 
     
-    teamNameList = match_data_origin['teamname'].unique()
-    teamList = match_data_origin['teamid'].unique()
+    
+    teamList = match_data_origin['teamname'].unique()
 
     match_data_filtered = match_data_origin.loc[match_data_origin['position']=='team',['result','teamname','teamid','kills','doublekills','triplekills','quadrakills','pentakills','minionkills','monsterkills','dragons','opp_dragons','elementaldrakes','opp_elementaldrakes','elders','opp_elders','heralds','opp_heralds','barons','opp_barons','towers','opp_towers','turretplates','opp_turretplates','inhibitors','opp_inhibitors']]
 
@@ -25,7 +25,7 @@ def data_result1():
 
     optionName = st.selectbox(
     'team select',
-    ['all'].extend(list(teamNameList)))
+    ['all'].extend(list(teamList)))
 
     winRate = defaultdict()
 
@@ -33,7 +33,7 @@ def data_result1():
     if optionName !='all':
         teamList = [optionName]
     for team in teamList:
-        teamFiltered = match_data_filtered.loc[match_data_filtered['teamid'] == team]
+        teamFiltered = match_data_filtered.loc[match_data_filtered['teamname'] == team]
         winRate[team] = teamFiltered['result'].mean()
     
 
@@ -61,7 +61,7 @@ def data_result1():
     inhibitors = {}
     opp_inhibitors = {}
     for team in teamList:
-        teamFiltered = match_data_filtered.loc[match_data_filtered['teamid'] == team]
+        teamFiltered = match_data_filtered.loc[match_data_filtered['teamname'] == team]
         killDict[team] = teamFiltered['kills'].mean()
         doubleDict[team] = teamFiltered['doublekills'].mean()
         tripleDict[team] = teamFiltered['triplekills'].mean()
@@ -86,7 +86,7 @@ def data_result1():
         inhibitors[team]= teamFiltered['inhibitors'].mean()
         opp_inhibitors[team]= teamFiltered['opp_inhibitors'].mean()
 
-    relationDf = pd.DataFrame(columns=["teamid","winRate","Kills","doubleKills","tripleKill","quadraKill","pentaKill","minionKill","monsterKill",'dragons','opp_dragons','elementaldrakes','opp_elementaldrakes','elders','opp_elders','heralds','opp_heralds','barons','opp_barons','towers','opp_towers','turretplates','opp_turretplates','inhibitors','opp_inhibitors'])
+    relationDf = pd.DataFrame(columns=["teamname","winRate","Kills","doubleKills","tripleKill","quadraKill","pentaKill","minionKill","monsterKill",'dragons','opp_dragons','elementaldrakes','opp_elementaldrakes','elders','opp_elders','heralds','opp_heralds','barons','opp_barons','towers','opp_towers','turretplates','opp_turretplates','inhibitors','opp_inhibitors'])
 
     for team in teamList:
         relationDf.loc[-1] = [team,winRate[team],killDict[team],doubleDict[team],tripleDict[team],quadraDict[team],pentaDict[team],minionDict[team],monsterDict[team],dragonDict[team],oppDragonDict[team],elementaldrakesDict[team],oppElementaldrakes[team],elders[team],oppElders[team],heralds[team],opp_heralds[team],barons[team],opp_barons[team],towers[team],opp_towers [team],turretplates[team],opp_turretplates [team],inhibitors[team],opp_inhibitors[team]]
