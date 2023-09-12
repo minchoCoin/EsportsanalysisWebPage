@@ -97,3 +97,5 @@ for p in gp_plot.patches:
 
 plt.title("coefficient of winRate and firstblood")
 st.pyplot(plt)
+
+st.write('**모든데이터는 소수 셋째자리에서 반올림함**')

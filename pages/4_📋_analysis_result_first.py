@@ -116,3 +116,5 @@ for idx, row in trendData.iterrows():
 
 trendData['form'] = form
 st.table(trendData)
+
+st.write('**모든데이터는 소수 넷째자리에서 반올림함**')

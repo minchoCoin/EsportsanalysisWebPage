@@ -235,5 +235,6 @@ def data_result1():
     st.table(trendData)
 data_result1()
 
+st.write('**모든데이터는 소수 넷째자리에서 반올림함**')
 
 
