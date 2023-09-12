@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 def data_origin():
+    st.set_page_config(page_title="data_origin", page_icon="🗃️")
+    #st.sidebar.header("data_origin")
     st.markdown('## 분석한 데이터')
     st.markdown(
         '''
@@ -17,5 +19,4 @@ def data_origin():
     if st.button('데이터 보기'):
         st.dataframe(df)
 
-st.set_page_config(page_title="data_origin", page_icon="🗃️")
 data_origin()

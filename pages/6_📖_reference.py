@@ -1,6 +1,7 @@
 import streamlit as st
 
 def reference():
+        st.set_page_config(page_title="reference", page_icon="📖")
         st.markdown(
         '''
 |reference|이유|
@@ -13,5 +14,5 @@ def reference():
 |https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dotorimj2&logNo=222117972039|산점도와 선형회귀선 그리기|
         '''
         )
-st.set_page_config(page_title="reference", page_icon="📖")
+
 reference()

@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title = "LOL data analysis",page_icon="🎮")
 
@@ -28,10 +29,6 @@ st.markdown(
   데이터 분석 결과와 이 홈페이지의 소스코드의 github 링크입니다.
   """
 )
-
-#st.sidebar.success("Select a menu above.")
-
-
 
 
 

@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 def data_method():
+    st.set_page_config(page_title="How the data was analyzed", page_icon="🔍")
+    #st.sidebar.header("data_origin")
     st.markdown('## 사용한 라이브러리')
     st.markdown(
         '''
@@ -75,5 +77,5 @@ def data_method():
     st.image(img9,use_column_width=True)
     st.write('Scikit learn의 Linear Regression을 이용하여 각 지표와 승률의 정확한 상관관계 분석')
 
-st.set_page_config(page_title="How the data was analyzed", page_icon="🔍")
+
 data_method()

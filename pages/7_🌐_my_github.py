@@ -1,8 +1,9 @@
 import streamlit as st
 
-st.set_page_config(page_title="my_github", page_icon="🌐")
 
 def github():
+    
+    st.set_page_config(page_title="my_github", page_icon="🌐")
     st.markdown(
         '''
         #### 아래 깃허브에서 ipynb파일로 더 정확하게 데이터 분석 결과를 볼 수 있습니다.

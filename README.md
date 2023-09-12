@@ -4,12 +4,12 @@
 this is code of web page about Esportsanalysis repository
 
 ## Requirements
- - Python 3.x, streamlit, Pandas, pillow
+ - Python 3.x, streamlit, Pandas, pillow, matplotlib, numpy, scikit-learn, streamlit_option_menu
 
 ## How to run
 
 ```
-streamlit run Stream.py
+streamlit run Stream_app.py
 ```
 
 ## data origin
