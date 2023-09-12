@@ -26,4 +26,4 @@ streamlit run Stream_app.py
 
  - https://docs.streamlit.io/library/get-started/multipage-apps/create-a-multipage-app
 
-
+ - https://discuss.streamlit.io/t/modulenotfounderror-no-module-named-vega-datasets/16354/2
