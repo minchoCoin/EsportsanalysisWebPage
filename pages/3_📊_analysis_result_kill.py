@@ -25,7 +25,7 @@ def data_result1():
 
     optionName = st.selectbox(
     'team select',
-    ['all'].extend(list(teamList)))
+    teamList)
 
     winRate = defaultdict()
 
