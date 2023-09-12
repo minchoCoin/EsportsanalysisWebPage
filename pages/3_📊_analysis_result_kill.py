@@ -14,16 +14,28 @@ def data_result1():
 
     match_data_origin=match_data
 
+
+    
+    teamNameList = match_data_origin['teamname'].unique()
     teamList = match_data_origin['teamid'].unique()
 
-    match_data_filtered = match_data_origin.loc[match_data_origin['position']=='team',['result','teamid','kills','doublekills','triplekills','quadrakills','pentakills','minionkills','monsterkills','dragons','opp_dragons','elementaldrakes','opp_elementaldrakes','elders','opp_elders','heralds','opp_heralds','barons','opp_barons','towers','opp_towers','turretplates','opp_turretplates','inhibitors','opp_inhibitors']]
+    match_data_filtered = match_data_origin.loc[match_data_origin['position']=='team',['result','teamname','teamid','kills','doublekills','triplekills','quadrakills','pentakills','minionkills','monsterkills','dragons','opp_dragons','elementaldrakes','opp_elementaldrakes','elders','opp_elders','heralds','opp_heralds','barons','opp_barons','towers','opp_towers','turretplates','opp_turretplates','inhibitors','opp_inhibitors']]
 
     match_data_filtered = match_data_filtered.dropna(axis=0)
 
+    optionName = st.selectbox(
+    'team select',
+    ['all'].extend(teamNameList))
+
     winRate = defaultdict()
+
+
+    if optionName !='all':
+        teamList = [optionName]
     for team in teamList:
         teamFiltered = match_data_filtered.loc[match_data_filtered['teamid'] == team]
         winRate[team] = teamFiltered['result'].mean()
+    
 
     killDict = {}
     doubleDict = {}
