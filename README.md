@@ -11,7 +11,7 @@ this is code of web page about Esportsanalysis repository
 ```
 streamlit run Stream_app.py
 ```
-
+or just visit https://minchocoin-lol-data-analysis.streamlit.app/
 ## data origin
  - 2023_LOL_esports_match_data_from_OracleElixir.csv 
  - https://oracleselixir.com/tools/downloads
